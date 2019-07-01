@@ -14,7 +14,7 @@ interface Options{
         outputPath: string
     }
 }
-function commonConfigCreator(options: Options){
+function _commonConfigCreator(options: Options){
     let cssLoaders = [
         {
             loader: "css-loader",
@@ -67,15 +67,15 @@ function commonConfigCreator(options: Options){
                     include: [
                         path.resolve(__dirname, "../src")
                     ],
-                    exclude: [
-                        /node_modules/
-                    ],
-                    use: {
-                        loader: "babel-loader",
-                        options: {
-                            presets: ['@babel/preset-react']
+                    use: [
+                        {
+                            loader: "babel-loader",
+                            options: {
+                                presets: ['@babel/preset-react'],
+                                plugins: ["react-hot-loader/babel"]
+                            }
                         }
-                    }
+                    ]
                 },
                 {
                     test: /\.(css|scss)$/,
@@ -123,4 +123,4 @@ function commonConfigCreator(options: Options){
 }
 
 
-export default commonConfigCreator;
+module.exports = _commonConfigCreator;

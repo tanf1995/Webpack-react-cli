@@ -1,4 +1,4 @@
-import commonConfigCreator from './webpack.common';
+const commonConfigCreator = require('./webpack.common.ts');
 const merge = require('webpack-merge');
 //plugin
 
@@ -7,9 +7,8 @@ const prodConfig = {
     devtool: "inline-source-map",
     devServer: {
         contentBase: "./dist",
-        // open: true,
         port: 3000,
-        hot: true
+        hot: true,
     }
 }
 

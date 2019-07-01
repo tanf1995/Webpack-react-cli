@@ -6,7 +6,7 @@
     "author": "tanfeng <tanfeng920351513@outlook.com>",
     "license": "MIT",
     "scripts": {
-        "start": "webpack-dev-server --config config/webpack.dev.ts",
+        "start": "ts-node scripts/start.ts",
         "build": "webpack --config config/webpack.prod.ts"
     },
     "devDependencies": {
@@ -26,6 +26,7 @@
         "optimize-css-assets-webpack-plugin": "^5.0.1",
         "postcss-import": "^12.0.1",
         "postcss-loader": "^3.0.0",
+        "react-hot-loader": "^4.12.0",
         "sass-loader": "^7.1.0",
         "style-loader": "^0.23.1",
         "ts-node": "^8.3.0",

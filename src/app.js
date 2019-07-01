@@ -1,15 +1,15 @@
 import React from 'react';
+import {hot} from 'react-hot-loader/root';
 import './style/reset.css';
 import styles from './app.scss';
 import pic from './assets/images/tuzi.jpg';
+import HomePage from './views/HomePage';
 
 
 function App(){
     return (
         <div className={styles.appL}>
-            <h1 className="title">Home Page</h1>
-
-            <p>hello friends!</p>
+            <HomePage />
             <div>
                 {styles.appL}
             </div>
@@ -21,4 +21,4 @@ function App(){
     )
 }
 
-export default App;
+export default hot(App);
