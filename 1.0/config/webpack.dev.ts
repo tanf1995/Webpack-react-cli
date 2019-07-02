@@ -1,4 +1,4 @@
-const commonConfigCreator = require('./webpack.common.ts');
+import commonConfigCreator from './webpack.common';
 const merge = require('webpack-merge');
 //plugin
 

@@ -14,7 +14,7 @@ interface Options{
         outputPath: string
     }
 }
-function _commonConfigCreator(options: Options){
+function commonConfigCreator(options: Options){
     let cssLoaders = [
         {
             loader: "css-loader",
@@ -31,7 +31,7 @@ function _commonConfigCreator(options: Options){
             loader: "postcss-loader",
             options: {
                 ident: 'postcss',
-                plugins: (loader) => [
+                plugins: (loader: any) => [
                     require('postcss-import')({ root: loader.resourcePath }),
                     require('autoprefixer')()
                 ]
@@ -60,14 +60,21 @@ function _commonConfigCreator(options: Options){
             filename: outputFileName,
             path: path.resolve(__dirname, options.outputPath)
         },
+        resolve: {
+            extensions: [".js", ".json", ".jsx", ".css", 'scss', 'tsx', 'ts'],
+            alias: {
+                "@": path.resolve(__dirname, '../src')
+            }
+        },
         module: {
             rules: [
                 {
-                    test: /\.(jsx|js)$/,
+                    test: /\.(jsx?|tsx?)$/,
                     include: [
                         path.resolve(__dirname, "../src")
                     ],
                     use: [
+                        "ts-loader",
                         {
                             loader: "babel-loader",
                             options: {
@@ -123,4 +130,5 @@ function _commonConfigCreator(options: Options){
 }
 
 
-module.exports = _commonConfigCreator;
+// module.exports = _commonConfigCreator;
+export default commonConfigCreator;

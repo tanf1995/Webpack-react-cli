@@ -6,7 +6,8 @@ const WebpackConfig = require('../config/webpack.dev.ts');
 const compiler = Webpack(WebpackConfig);
 const devServerOptions = Object.assign({}, WebpackConfig.devServer, {
     open: true,
-    // quiet: true,
+    quiet: true,
+    clientLogLevel: "none"
 });
 const server = new WebpackDevServer(compiler, devServerOptions);
 
