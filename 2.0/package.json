@@ -1,6 +1,17 @@
 {
-  "name": "2.0",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+    "name": "2.0",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "node ./scripts/start.js",
+        "build": "node ./scripts/build.js"
+    },
+    "devDependencies": {
+        "clean-webpack-plugin": "^3.0.0",
+        "html-webpack-plugin": "^3.2.0",
+        "webpack": "^4.35.2",
+        "webpack-cli": "^3.3.5",
+        "webpack-dev-server": "^3.7.2"
+    }
 }
